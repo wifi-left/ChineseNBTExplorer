@@ -32,9 +32,11 @@ jobs:
       run: echo "SHORT_SHA=${GITHUB_SHA::7}" >> $GITHUB_ENV
     - name: List files in the repository
       run: |
-          dir D:/a/LyricsLib/LyricsLib/x64/Debug
+          dir D:/a/ChineseNBTExplorer/ChineseNBTExplorer/NBTExplorer/bin/Debug/
     - name: Upload Artifacts
       uses: actions/upload-artifact@v2
       with:
         name: NBTExplorer-Debug-version
-        path: D:/a/NBTExplorer/bin/Debug/*.exe;D:/a/NBTExplorer/bin/Debug/*.dll
+        path: |
+          D:/a/ChineseNBTExplorer/ChineseNBTExplorer/NBTExplorer/bin/Debug/*.exe
+          D:/a/ChineseNBTExplorer/ChineseNBTExplorer/NBTExplorer/bin/Debug/*.dll
