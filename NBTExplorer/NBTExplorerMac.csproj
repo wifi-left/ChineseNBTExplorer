@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{01F9A296-C477-4CBF-A0D0-41E697048257}</ProjectGuid>
+    <ProjectTypeGuids>{948B3504-5B70-4649-8FE4-BDE1FB46EC69};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>NBTExplorer</RootNamespace>
+    <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
+    <AssemblyName>NBTExplorer</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <EnablePackageSigning>False</EnablePackageSigning>
+    <IncludeMonoRuntime>False</IncludeMonoRuntime>
+    <ConsolePause>False</ConsolePause>
+    <EnableCodeSigning>False</EnableCodeSigning>
+    <CreatePackage>False</CreatePackage>
+    <CodeSigningKey>Mac Developer</CodeSigningKey>
+    <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <EnablePackageSigning>False</EnablePackageSigning>
+    <IncludeMonoRuntime>True</IncludeMonoRuntime>
+    <LinkMode>SdkOnly</LinkMode>
+    <ConsolePause>False</ConsolePause>
+    <EnableCodeSigning>False</EnableCodeSigning>
+    <CreatePackage>False</CreatePackage>
+    <CodeSigningKey>Mac Developer</CodeSigningKey>
+    <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\AppStore</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
+    <IncludeMonoRuntime>True</IncludeMonoRuntime>
+    <LinkMode>Full</LinkMode>
+    <EnablePackageSigning>True</EnablePackageSigning>
+    <ConsolePause>False</ConsolePause>
+    <EnableCodeSigning>True</EnableCodeSigning>
+    <CreatePackage>True</CreatePackage>
+    <CodeSigningKey>3rd Party Mac Developer Application</CodeSigningKey>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="Substrate">
+      <HintPath>..\Substrate\SubstrateCS\bin\Release\NET2\Substrate.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Data" />
+    <Reference Include="MonoMac, Version=0.0.0.0, Culture=neutral">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="app.config" />
+    <None Include="Properties\Resources.resources" />
+    <None Include="Properties\Resources.resx" />
+    <None Include="Properties\Settings.settings" />
+    <None Include="LICENSE.txt" />
+    <None Include="Mac\Scratch.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Mono\MonoMac\v0.0\Mono.MonoMac.targets" />
+  <ItemGroup />
+  <ItemGroup>
+    <Compile Include="Model\CompoundTagContainer.cs" />
+    <Compile Include="Model\CubicRegionDataNode.cs" />
+    <Compile Include="Model\CubicRegionFile.cs" />
+    <Compile Include="Model\DataNode.cs" />
+    <Compile Include="Model\DataNodeCollection.cs" />
+    <Compile Include="Model\DirectoryDataNode.cs" />
+    <Compile Include="Model\FileTypeRegistry.cs" />
+    <Compile Include="Model\ListTagContainer.cs" />
+    <Compile Include="Model\NbtFileDataNode.cs" />
+    <Compile Include="Model\NodeCapabilities.cs" />
+    <Compile Include="Model\RegionChunkDataNode.cs" />
+    <Compile Include="Model\RegionFileDataNode.cs" />
+    <Compile Include="Model\TagByteArrayDataNode.cs" />
+    <Compile Include="Model\TagByteDataNode.cs" />
+    <Compile Include="Model\TagCompoundDataNode.cs" />
+    <Compile Include="Model\TagContainerInterface.cs" />
+    <Compile Include="Model\TagDataNode.cs" />
+    <Compile Include="Model\TagDoubleDataNode.cs" />
+    <Compile Include="Model\TagFloatDataNode.cs" />
+    <Compile Include="Model\TagIntArrayDataNode.cs" />
+    <Compile Include="Model\TagIntDataNode.cs" />
+    <Compile Include="Model\TagListDataNode.cs" />
+    <Compile Include="Model\TagLongDataNode.cs" />
+    <Compile Include="Model\TagShortDataNode.cs" />
+    <Compile Include="Model\TagStringDataNode.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Properties\Settings.Designer.cs" />
+    <Compile Include="NbtClipboardData.cs" />
+    <Compile Include="SearchWorker.cs" />
+    <Compile Include="Mac\MainWindow.cs" />
+    <Compile Include="Mac\MainWindowController.cs" />
+    <Compile Include="Mac\MainWindow.designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mac\AppDelegate.cs" />
+    <Compile Include="Mac\AppDelegate.designer.cs">
+      <DependentUpon>AppDelegate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mac\TreeDataNode.cs" />
+    <Compile Include="Mac\TreeDataSource.cs" />
+    <Compile Include="Mac\ImageAndTextCell.cs" />
+    <Compile Include="Mac\IconRegistry.cs" />
+    <Compile Include="Model\TagKey.cs" />
+    <Compile Include="ProgramMac.cs" />
+    <Compile Include="FormRegistry.cs" />
+    <Compile Include="Mac\FormHandlers.cs" />
+    <Compile Include="Mac\EditStringWindow.cs" />
+    <Compile Include="Mac\EditStringWindowController.cs" />
+    <Compile Include="Mac\EditStringWindow.designer.cs">
+      <DependentUpon>EditStringWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mac\ModalResult.cs" />
+    <Compile Include="Mac\EditNameWindow.cs" />
+    <Compile Include="Mac\EditNameWindowController.cs" />
+    <Compile Include="Mac\EditNameWindow.designer.cs">
+      <DependentUpon>EditNameWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mac\CreateNodeWindow.cs" />
+    <Compile Include="Mac\CreateNodeWindowController.cs" />
+    <Compile Include="Mac\CreateNodeWindow.designer.cs">
+      <DependentUpon>CreateNodeWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mac\EditValueWindow.cs" />
+    <Compile Include="Mac\EditValueWindowController.cs" />
+    <Compile Include="Mac\EditValueWindow.designer.cs">
+      <DependentUpon>EditValueWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NbtClipboardController.cs" />
+    <Compile Include="Mac\NbtClipboardControllerMac.cs" />
+    <Compile Include="Mac\SearchStateMac.cs" />
+    <Compile Include="Mac\FindWindow.cs" />
+    <Compile Include="Mac\FindWindowController.cs" />
+    <Compile Include="Mac\FindWindow.designer.cs">
+      <DependentUpon>FindWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mac\CancelFindWindow.cs" />
+    <Compile Include="Mac\CancelFindWindowController.cs" />
+    <Compile Include="Mac\CancelFindWindow.designer.cs">
+      <DependentUpon>CancelFindWindow.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Dead_Bush.png" />
+    <BundleResource Include="Resources\arrow-090.png" />
+    <BundleResource Include="Resources\arrow-270.png" />
+    <BundleResource Include="Resources\binocular--arrow.png" />
+    <BundleResource Include="Resources\binocular.png" />
+    <BundleResource Include="Resources\clipboard-paste.png" />
+    <BundleResource Include="Resources\cross.png" />
+    <BundleResource Include="Resources\disk--pencil.png" />
+    <BundleResource Include="Resources\disk.png" />
+    <BundleResource Include="Resources\document-attribute-b.png" />
+    <BundleResource Include="Resources\document-attribute-i.png" />
+    <BundleResource Include="Resources\document-copy.png" />
+    <BundleResource Include="Resources\door.png" />
+    <BundleResource Include="Resources\edit-code-b.png" />
+    <BundleResource Include="Resources\edit-code-i.png" />
+    <BundleResource Include="Resources\edit-code.png" />
+    <BundleResource Include="Resources\folder-open-document.png" />
+    <BundleResource Include="Resources\folder-open.png" />
+    <BundleResource Include="Resources\information-frame.png" />
+    <BundleResource Include="Resources\pencil.png" />
+    <BundleResource Include="Resources\question-frame.png" />
+    <BundleResource Include="Resources\question-white.png" />
+    <BundleResource Include="Resources\scissors.png" />
+    <BundleResource Include="Resources\selection-input.png" />
+    <BundleResource Include="Resources\folder-open-24.png" />
+    <BundleResource Include="Resources\disk-24.png" />
+    <BundleResource Include="Resources\block.png" />
+    <BundleResource Include="Resources\box.png" />
+    <BundleResource Include="Resources\document-attribute-d.png" />
+    <BundleResource Include="Resources\document-attribute-f.png" />
+    <BundleResource Include="Resources\document-attribute-l.png" />
+    <BundleResource Include="Resources\document-attribute-s.png" />
+    <BundleResource Include="Resources\edit-list.png" />
+    <BundleResource Include="Resources\edit-small-caps.png" />
+    <BundleResource Include="Resources\wooden-box.png" />
+    <BundleResource Include="Resources\box-24.png" />
+    <BundleResource Include="Resources\cross-24.png" />
+    <BundleResource Include="Resources\document-24.png" />
+    <BundleResource Include="Resources\document-b-24.png" />
+    <BundleResource Include="Resources\document-d-24.png" />
+    <BundleResource Include="Resources\document-f-24.png" />
+    <BundleResource Include="Resources\document-i-24.png" />
+    <BundleResource Include="Resources\document-l-24.png" />
+    <BundleResource Include="Resources\document-s-24.png" />
+    <BundleResource Include="Resources\edit-code-24.png" />
+    <BundleResource Include="Resources\edit-code-i-24.png" />
+    <BundleResource Include="Resources\edit-list-24.png" />
+    <BundleResource Include="Resources\edit-small-caps-24.png" />
+    <BundleResource Include="Resources\pencil-24.png" />
+    <BundleResource Include="Resources\scissors-24.png" />
+    <BundleResource Include="Resources\selection-input-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Mac\MainWindow.xib" />
+    <InterfaceDefinition Include="Mac\MainMenu.xib" />
+    <InterfaceDefinition Include="Mac\EditStringWindow.xib" />
+    <InterfaceDefinition Include="Mac\EditNameWindow.xib" />
+    <InterfaceDefinition Include="Mac\CreateNodeWindow.xib" />
+    <InterfaceDefinition Include="Mac\EditValueWindow.xib" />
+    <InterfaceDefinition Include="Mac\FindWindow.xib" />
+    <InterfaceDefinition Include="Mac\CancelFindWindow.xib" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Dead_Bush_256.icns" />
+    <Content Include="nbte.icns" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,42 @@
+name: MSBuild
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+env:
+  # Path to the solution file relative to the root of the project.
+  SOLUTION_FILE_PATH: .
+
+  # Configuration type to build.
+  # You can convert this to a build matrix if you need coverage of multiple configuration types.
+  # https://docs.github.com/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
+  BUILD_CONFIGURATION: Release
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Add MSBuild to PATH
+      uses: microsoft/setup-msbuild@v1.0.2
+
+    - name: Build
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: |
+        msbuild
+    - name: Get short SHA
+      run: echo "SHORT_SHA=${GITHUB_SHA::7}" >> $GITHUB_ENV
+    - name: List files in the repository
+      run: |
+          dir D:/a/ChineseNBTExplorer/ChineseNBTExplorer/NBTExplorer/bin/Debug/
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: NBTExplorer-Debug-version
+        path: |
+          D:/a/ChineseNBTExplorer/ChineseNBTExplorer/NBTExplorer/bin/Debug/*.exe
+          D:/a/ChineseNBTExplorer/ChineseNBTExplorer/NBTExplorer/bin/Debug/*.dll
