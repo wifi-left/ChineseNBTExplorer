@@ -97,10 +97,10 @@
     </StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>A00A406A86A8FC2BCB6E8800E33589FAC5D3702B</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>3CF71D24EBFD4A727479D8A985A96DB2EC1CA3C6</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>NBTExplorer_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>NBTExplorer_1_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -112,7 +112,7 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Substrate">
@@ -326,6 +326,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="dead_bush.ico" />
+    <None Include="NBTExplorer_1_TemporaryKey.pfx" />
     <None Include="NBTExplorer_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />

@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "8a458245-8176-4599-95cd-3ca39f2435ce": {
+      "ProjectGuid": "8a458245-8176-4599-95cd-3ca39f2435ce",
+      "DisplayName": "NBTExplorer",
+      "ColorIndex": 0
+    },
+    "bd90eed5-97b9-47d5-afea-c2c0d0e59fcf": {
+      "ProjectGuid": "bd90eed5-97b9-47d5-afea-c2c0d0e59fcf",
+      "DisplayName": "NBTUtil",
+      "ColorIndex": 1
+    },
+    "20d7cba3-5b6d-40b0-8d28-4c9a58e4ffbc": {
+      "ProjectGuid": "20d7cba3-5b6d-40b0-8d28-4c9a58e4ffbc",
+      "DisplayName": "NBTModel",
+      "ColorIndex": 2
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "杂项文件",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 3
+}

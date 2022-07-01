@@ -32,7 +32,7 @@ namespace NBTExplorer.Windows
 
         private void _buttonFind_Click (object sender, EventArgs e)
         {
-            MessageBox.Show("注意：此过程将会消耗一些时间，可能会出现卡顿。若出现此问题，请重启此程序。", "Warning:");
+            //MessageBox.Show("注意：此过程将会消耗一些时间，可能会出现卡顿。若出现此问题，请重启此程序。", "Warning:");
             DialogResult = DialogResult.OK;
             Close();
         }
