@@ -19,6 +19,7 @@ NBTExplorer 支持读写以下格式：
 * Minecraft 区域文件 (*.mcr) 
 * Minecraft anvil 文件 (*.mca) 
 * 立方块区域文件（r2\*.mcr、r2\*.mca） 
+* 结构文件（*.nbt）
 
 ## 系统要求
 
